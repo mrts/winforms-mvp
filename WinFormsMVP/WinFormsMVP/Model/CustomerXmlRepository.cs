@@ -29,14 +29,19 @@ namespace WinFormsMVP.Model
 
         private void createCustomerXmlRepositoryStub()
         {
+            var stubCustomerList = new List<Customer> {
+                new Customer {Name = "Joe", Address = "Nowhere, TX 1023", Phone = "123-456"},
+                new Customer {Name = "Jane", Address = "Nowhere, AZ 1026", Phone = "124-456"},
+                new Customer {Name = "Steve", Address = "Nowhere, UT 1005", Phone = "125-456"}
+            };
+            saveCustomerList(stubCustomerList);
+        }
+
+        private void saveCustomerList(List<Customer> customers)
+        {
             using (var writer = new StreamWriter(_xmlFilePath, false))
             {
-                var stubCustomerList = new List<Customer> {
-                    new Customer {Name = "Joe", Address = "Nowhere, TX 1023", Phone = "123-456"},
-                    new Customer {Name = "Jane", Address = "Nowhere, AZ 1026", Phone = "124-456"},
-                    new Customer {Name = "Steve", Address = "Nowhere, UT 1005", Phone = "125-456"}
-                };
-                _serializer.Serialize(writer, stubCustomerList);
+                _serializer.Serialize(writer, customers);
             }
         }
 
@@ -45,9 +50,15 @@ namespace WinFormsMVP.Model
             return _customers.Value;
         }
 
-        public Customer GetCustomer(int p)
+        public Customer GetCustomer(int id)
         {
-            return _customers.Value[p];
+            return _customers.Value[id];
+        }
+
+        public void SaveCustomer(int id, Customer customer)
+        {
+            _customers.Value[id] = customer;
+            saveCustomerList(_customers.Value);
         }
     }
 }

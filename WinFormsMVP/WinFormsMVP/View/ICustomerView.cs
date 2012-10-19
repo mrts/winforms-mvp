@@ -6,11 +6,13 @@ namespace WinFormsMVP.View
     {
         IList<string> CustomerList { get; set; }
 
-        string CustomerName { set; }
+        int SelectedCustomer { get; set; }
 
-        string Address { set; }
+        string CustomerName { get; set; }
 
-        string Phone { set; }
+        string Address { get; set; }
+
+        string Phone { get; set; }
 
         Presenter.CustomerPresenter Presenter { set; }
     }
