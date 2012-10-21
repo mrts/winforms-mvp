@@ -26,7 +26,7 @@ namespace WinFormsMVP.Presenter
             _view.SelectedCustomer = selectedCustomer;
         }
 
-        internal void FillCustomerForm(int p)
+        public void FillCustomerForm(int p)
         {
             Customer customer = _repository.GetCustomer(p);
             _view.CustomerName = customer.Name;
@@ -34,7 +34,7 @@ namespace WinFormsMVP.Presenter
             _view.Phone = customer.Phone;
         }
 
-        internal void SaveCustomer()
+        public void SaveCustomer()
         {
             Customer customer = new Customer { Name = _view.CustomerName, Address = _view.Address, Phone = _view.Phone};
             _repository.SaveCustomer(_view.SelectedCustomer, customer);
