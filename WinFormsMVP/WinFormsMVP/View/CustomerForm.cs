@@ -48,7 +48,8 @@ namespace WinFormsMVP.View
 
         private void customerListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.FillCustomerForm(customerListBox.SelectedIndex);
+            // FIXME: try/catch
+            Presenter.UpdateCustomerView(customerListBox.SelectedIndex);
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -65,6 +66,7 @@ namespace WinFormsMVP.View
             if (!_isEditMode)
             {
                 // TODO: validation
+                // FIXME: try/catch
                 Presenter.SaveCustomer();
             }
         }

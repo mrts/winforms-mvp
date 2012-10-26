@@ -7,6 +7,11 @@ Windows Forms.
 
 This project aims to fill the gap.
 
-Note that there are no attempts to use *INotifyPropertyChanged*, everything is
-managed by the Presenter. This is by design - *INotifyPropertyChanged* takes us
-to the *Supervising Controller* land.
+The common way of using *INotifyPropertyChanged* to connect the model to the
+view and have the presenter as a bystander takes us to the *Supervising
+Controller* land. Here, by design, everything is managed by the Presenter
+instead.
+
+The design is as follows:
+
+![image](https://raw.github.com/mrts/winforms-mvp/master/MVPOverviewClassDiagram.png)

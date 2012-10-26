@@ -16,7 +16,7 @@ namespace WinFormsMVP.Model
             _xmlFilePath = fullPath + @"\customers.xml";
 
             if (!File.Exists(_xmlFilePath))
-                createCustomerXmlRepositoryStub();
+                CreateCustomerXmlStub();
 
             _customers = new Lazy<List<Customer>>(() =>
             {
@@ -27,17 +27,17 @@ namespace WinFormsMVP.Model
             });
         }
 
-        private void createCustomerXmlRepositoryStub()
+        private void CreateCustomerXmlStub()
         {
             var stubCustomerList = new List<Customer> {
                 new Customer {Name = "Joe", Address = "Nowhere, TX 1023", Phone = "123-456"},
                 new Customer {Name = "Jane", Address = "Nowhere, AZ 1026", Phone = "124-456"},
                 new Customer {Name = "Steve", Address = "Nowhere, UT 1005", Phone = "125-456"}
             };
-            saveCustomerList(stubCustomerList);
+            SaveCustomerList(stubCustomerList);
         }
 
-        private void saveCustomerList(List<Customer> customers)
+        private void SaveCustomerList(List<Customer> customers)
         {
             using (var writer = new StreamWriter(_xmlFilePath, false))
             {
@@ -58,7 +58,7 @@ namespace WinFormsMVP.Model
         public void SaveCustomer(int id, Customer customer)
         {
             _customers.Value[id] = customer;
-            saveCustomerList(_customers.Value);
+            SaveCustomerList(_customers.Value);
         }
     }
 }

@@ -39,12 +39,12 @@ namespace WinFormsMVP.Tests
         }
 
         [Fact]
-        public void Presenter_FillCustomerForm_ShouldPopulateViewWithRightCustomer()
+        public void Presenter_UpdateCustomerView_ShouldPopulateViewWithRightCustomer()
         {
             var mockRepo = Mock.Get(mockCustomerRepository);
             mockRepo.Setup(repository => repository.GetCustomer(1)).Returns(stubCustomerList[1]);
 
-            presenter.FillCustomerForm(1);
+            presenter.UpdateCustomerView(1);
 
             var mockView = Mock.Get(mockCustomerView);
             mockView.VerifySet(view => view.CustomerName = stubCustomerList[1].Name);

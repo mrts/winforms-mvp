@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WinFormsMVP.Model.Customer">
+    <Position X="9.25" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAQAAAAAAIACAAAAIAAAAAA=</HashCode>
+      <FileName>Model\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormsMVP.Model.CustomerXmlRepository" BaseTypeListCollapsed="true">
+    <Position X="3" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAgAAAACEEAIAAAAAABAAQ=</HashCode>
+      <FileName>Model\CustomerXmlRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WinFormsMVP.Presenter.CustomerPresenter">
+    <Position X="6.5" Y="3.5" Width="2" />
+    <AssociationLine Name="_view" Type="WinFormsMVP.View.ICustomerView" FixedFromPoint="true">
+      <Path>
+        <Point X="7.5" Y="5.18" />
+        <Point X="7.5" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_repository" Type="WinFormsMVP.Model.ICustomerRepository" FixedFromPoint="true">
+      <Path>
+        <Point X="7.437" Y="3.5" />
+        <Point X="7.437" Y="1.988" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAABAAAAIAAAAAAAAAAAAAAAAQCAAAAAAAAA=</HashCode>
+      <FileName>Presenter\CustomerPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_view" />
+      <Field Name="_repository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WinFormsMVP.View.CustomerForm" BaseTypeListCollapsed="true">
+    <Position X="3" Y="6.25" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAAKSAiAAABAAAACQAQACQAAEAAACIAAAICAAACg=</HashCode>
+      <FileName>View\CustomerForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="1" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="WinFormsMVP.Model.ICustomerRepository">
+    <Position X="6.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAIAAAAAABAAA=</HashCode>
+      <FileName>Model\ICustomerRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WinFormsMVP.View.ICustomerView">
+    <Position X="6.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAQAAAAAACIAAAIAAAAAg=</HashCode>
+      <FileName>View\ICustomerView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
