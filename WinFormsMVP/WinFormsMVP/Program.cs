@@ -17,7 +17,8 @@ namespace WinFormsMVP
             var repository = new Model.CustomerXmlRepository(Application.StartupPath);
             var view = new View.CustomerForm();
 
-            // TODO: IOC
+            // Poor Man's Dependency Injection/Pure Dependency Injection, Main() is the Composition Root.
+            // See https://github.com/mrts/winforms-mvp/issues/2.
             var presenter = new Presenter.CustomerPresenter(view, repository);
 
             Application.Run(view);
